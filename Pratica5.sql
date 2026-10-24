@@ -190,13 +190,14 @@ SELECT * FROM info_produtos;
 SELECT * FROM pedidos;
 SELECT * FROM produtos;
 
+SET SQL_SAFE_UPDATES=0;
+
 START TRANSACTION;
 
 UPDATE funcionarios
 SET cargo = 'Garçonete', salario = 2700
 WHERE cpf = '444.555.666-77';
 
-SET SQL_SAFE_UPDATES=0;
 
 UPDATE pedidos
 SET status = 'Concluído'
@@ -210,3 +211,5 @@ WHERE cpf IN ('444.555.666-77', '222.333.444-55');
 
 SELECT * FROM pedidos
 WHERE data_pedido < '2024-07-06';
+
+COMMIT;
