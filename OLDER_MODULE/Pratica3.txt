@@ -1,0 +1,76 @@
+Conhecimentos sobre Bancos de Dados:
+
+Os bancos relacionais (SQL- Structured Query Language):
+
+É o modelo mais clássico, utilizando-se de SQL e 
+organizando os dados de forma rígida em tabelas com linhas e colunas.
+
+Suas Características:
+Foca na consistência e usa relações entre tabelas.
+
+Vantagens:
+Garante segurança total dos dados, perfeito para sistemas financeiros ou
+sistemas onde errar nunca será uma opção.
+
+Desvatagens:
+Dificilmente escalável horizontalmente, sem falar na exigência de que toda
+estrutura seja definida antes de começar a ser usado.
+
+Para este, temos: MySQL, PostgreSQL, Oracle e SQL Server.
+
+------------------------------------------------------------------------------------------------------------
+
+Os bancos Não relacionais (NoSQL - Not only SQL):
+
+É o modelo sem tabelas fixas, com diversos layouts diferentes para o 
+armazenamento de dados, entre esses layouts nós temos (Documentos, Chave-Valor, Colunar e Grafo).
+
+Suas Características:
+Extremamente Flexível, você pode salvar os dados com diferentes números de campos, sem precisar
+dar "ALTER TABLE" toda santa vez.
+
+Vantagens:
+Escala muito facilmente, é extremamente rápido e possui leitura e escrita simples, sendo 
+perfeito para Big Data e Apps em tempo real.
+
+Desvantagens:
+Pode haver duplicidade de dados e é mais difícil fazer consultas complexas que cruzam muitas informações.
+
+Neste, temos: MongoDB, Cassandra, Redis.
+
+------------------------------------------------------------------------------------------------------------
+
+Bancos de dados em nuvem (Cloud):
+
+Não é necessariamente um "modelo" de banco de dados, mas sim uma nova forma de entregar eles (DBaaS -
+Database as a Service). Eles rodam direto em provedores de nuvem.
+
+Suas Características:
+Gerenciamento automatizado de backups, patches de segurança e escalonamento elástico.
+
+Vantagens:
+Um baixo custo, alta produtividade, focando apenas na aplicação e deixando a manutenção a cargo da
+provedora.
+
+Desvantagens:
+Dependência do fornecedor, escalonamento dos custos se não tiver o devido cuidado.
+
+Neste, temos: Amazon RDS, Google Cloud Spanner, Azure Cosmos DB.
+
+------------------------------------------------------------------------------------------------------------
+
+Motores de Busca (Search Engines):
+
+Bancos de dados especializados na indexação e pesquisa de grandes volumes de texto e dados complexos
+em tempo real.
+
+Características:
+Utilizam-se de índices invertidos para permitir pesquisas de texto complexas e análises de dados de
+forma extremamente rápida.
+
+Vantagens:
+Sua capacidade de busca, sugestões de preenchimento e uma  performance assustadora para busca de 
+palavras-chave.
+
+Desvantagens:
+Consumo de memória RAM para manter os índices.
