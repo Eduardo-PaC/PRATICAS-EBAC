@@ -1,2 +1,0 @@
-chmod 755 calculadora.sh
-./calculadora.sh
