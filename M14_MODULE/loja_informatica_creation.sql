@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS clientes (
     cidade VARCHAR(50),
     PRIMARY KEY(id_cliente),
     CONSTRAINT uq_email
-    UNIQUE(email)
 ) CHARACTER SET utf8mb4;
 
 -- Criando Tabela: produtos.
