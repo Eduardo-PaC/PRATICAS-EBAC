@@ -212,7 +212,108 @@ FROM(
     GROUP BY cliente, produto
 ) AS t
 WHERE qtd_por_produto >= max_total
-OR qtd_por_produto IS NULL;
+OR qtd_por_produto IS NULL
+ORDER BY qtd_por_produto;
+
+
+--> SubQuery no [SELECT]:
+--> SubConsulta Escalar, retorna um único valor (uma célula: 1 linha e 1 coluna) para aparecer
+--> como uma "coluna extra" calculada ao lado de cada linha do resultado principal.
+
+--> Quando usar: Quando você quer exibir uma informação geral (como média de preço de todos
+--> os produtos ou o total de vendas) lado a lado com os detalhes de cada linha.
+
+--> Exemplo Mental: "Para cada produto que eu listar, traga o nome dele e, em uma coluna ao lado
+--> traga o preço médio geral de todos os produtos do estoque"
+
+--> Exemplo 01:
+SELECT
+    c.nome,
+    (
+        SELECT COUNT(*)
+        FROM pedidos AS pe
+        WHERE pe.id_cliente = c.id_cliente) AS total_pedidos
+FROM clientes AS c;
+
+
+--> Exemplo 02:
+SELECT
+    id_pedido,
+    quantidade,
+    (SELECT AVG(quantidade) FROM pedidos) AS media
+FROM pedidos;
+
+
+--> SubQuery no [FROM]:
+--> Tabela Derivada ou Inline View, cria uma tabela temporária na memória que você pode consultar,
+--> filtrar e fazer 'JOIN' logo em seguida. Regra de ouro: ela {SEMPRE} precisa de um apelido (alias)
+--> no final.
+
+--> Quando usar: Quando você precisa fazer um cálculo complexo (como agrupar, somar ou usar funções
+--> de janela) primeiro, e depoois usar esse resultado como se fosse uma tabela física real. É aqui
+--> que as CTEs (WITH)*¹ brilham muito, pois deixam o código limpo.
+
+--> Exemplo Mental: "Primeiro, calcule o total vendido por produto. Depois, faça um JOIN dessa
+--> tabela temporária com a tabela de clientes."
+
+--> *¹: CTEs: São subconsultas organizadas no topo da Query.
+
+
+--> SubQuery no [WHERE/HAVING]:
+--> SubConsulta de Filtro, funciona como um critério de comparação. O banco roda a subconsulta
+--> para descobrir um valor (ou uma lista de valores) e usa isso para decidir quem entra na
+--> resposta final.
+
+--> Quando usar: Quando o filtro depende de um dado dinâmico que precisa ser calculado na hora.
+
+--> Exemplo Mental: "Traga os clientes cujas compras tenham um valor maior do que a média de
+--> todas as compras da empresa." (O banco primeiro vai descobrir a média, depois vai filtrar
+--> os clientes).
+
+
+
+--> Apresente o nome do produto e o nome do cliente que comprou a maior quantidade
+--> de cada produto.
+
+--> 1. O que queremos ver?
+--> R: nome_produto, nome_cliente.
+
+--> 2. Quantas tabelas são? Como elas se conectam?
+--> R: São três tabelas ao todo: [clientes], [pedidos], [produtos].
+--> R: Elas se conectam através de JOINs, onde [clientes] -> [pedidos] <- [produtos].
+--> R: (A tabela [pedidos]concentra os IDs das outras duas).
+
+--> 3. Qual é a regra de negócio?
+--> R: Deve-se trazer apenas os nomes dos clientes que compraram a maior quantidade de cada produto.
+
+
+WITH mqp AS (
+    SELECT
+        c.nome AS cliente,
+        pd.nome_produto AS produto,
+        SUM(pe.quantidade) AS qpp,
+        MAX(SUM(pe.quantidade)) OVER(PARTITION BY pd.nome_produto) AS mqtd
+    FROM pedidos AS pe
+    LEFT JOIN produtos AS pd
+        ON pd.id_produto = pe.id_produto
+    LEFT JOIN clientes AS c
+        ON c.id_cliente = pe.id_cliente
+    GROUP BY cliente, produto
+    ORDER BY mqtd
+)
+SELECT
+    produto,
+    cliente,
+    qpp
+FROM mqp
+WHERE qpp = mqtd
+OR qpp IS NULL
+ORDER BY qpp;
+
+
+
+
+
 
 
 SELECT * FROM clientes;
