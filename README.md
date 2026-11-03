@@ -1,6 +1,7 @@
 # Esse é o meu save-point dos projetos do curso de 'Análise de Dados' da EBAC.
 
-> [!NOTE] **OLDER_MODULE -> Módulos Inicias** Por motivos pessoais, tive que pausar meu progresso e retornei de onde parei. Em breve voltarei a esses módulos introdutórios e atualizarei este bloco.
+> [!NOTE]
+>**OLDER_MODULE -> Módulos Iniciais** Por motivos pessoais, tive que pausar meu progresso e retornei de onde parei. Em breve voltarei a esses módulos introdutórios e atualizarei este bloco.
 
 ## Índice
 | Módulo | Tema | Principais Tópicos |
@@ -21,7 +22,8 @@ Neste módulo nós vimos:
 + Inserção de dados manual [`INSERT INTO`].
 + Query: Consulta simples [`SELECT`, `FROM`].
 
->[!TIP] Resultado de uma consulta extra, que fiz ao pesquisar por conta própria (achei divertido pois foi meu primeiro contato com o [OVER()]).
+>[!TIP] 
+>Resultado de uma consulta extra, que fiz ao pesquisar por conta própria (achei divertido pois foi meu primeiro contato com o [OVER()]).
 
 ![vISH](image.png)
 
@@ -36,7 +38,8 @@ Desta vez nós aprendemos algumas funções e queries bem interessantes, também
 
 No projeto deste módulo não houve nenhuma consulta que eu considere interessante o suficiente para receber destaque aqui.
 
->[!IMPORTANT] *À este módulo eu deixo uma menção especial, pois foi nele que eu decidir reorganizar as pastas e arquivos, e foi onde eu retomei meus estudos de git/github e montei este repositório (totalmente pelo terminal hehe). Por isso há uma falta de padronização inicial nos commits, mas aos poucos eu fui ajustando.*
+>[!IMPORTANT] 
+>*À este módulo eu deixo uma menção especial, pois foi nele que eu decidir reorganizar as pastas e arquivos, e foi onde eu retomei meus estudos de git/github e montei este repositório (totalmente pelo terminal hehe). Por isso há uma falta de padronização inicial nos commits, mas aos poucos eu fui ajustando.*
 
 
 ## Módulo 15 - Consultas em Múltiplas Tabelas
