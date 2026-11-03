@@ -1,7 +1,7 @@
 # Esse é o meu save-point dos projetos do curso de 'Análise de Dados' da EBAC.
 
 > [!NOTE]
->**OLDER_MODULE -> Módulos Iniciais** Por motivos pessoais, tive que pausar meu progresso e retornei de onde parei. Em breve voltarei a esses módulos introdutórios e atualizarei este bloco.
+>**OLDER_MODULE -> Módulos Iniciais**: Por motivos pessoais, tive que pausar meu progresso e retornei de onde parei. Em breve voltarei a esses módulos introdutórios e atualizarei este bloco.
 
 ## Índice
 | Módulo | Tema | Principais Tópicos |
@@ -23,14 +23,14 @@ Neste módulo nós vimos:
 + Query: Consulta simples [`SELECT`, `FROM`].
 
 >[!TIP] 
->Resultado de uma consulta extra, que fiz ao pesquisar por conta própria (achei divertido pois foi meu primeiro contato com o [OVER()]).
+>Resultado de uma consulta extra, que fiz ao pesquisar por conta própria (achei divertido pois foi meu primeiro contato com o `OVER`).
 
 ![vISH](image.png)
 
 
 ## Módulo 14 - Aprofundamento nos conhecimentos intermediários.
 
-Desta vez nós aprendemos algumas funções e queries bem interessantes, também ouso dizer que começou a complicar um pouquinho (não muito).
+Desta vez aprendemos funções e queries bem interessantes, também ouso dizer que começou a complicar um pouquinho (mas não muito).
 
 + Inserção de dados [`LOAD DATA LOCAL INFILE`]
 + Query: Agregação [`SUM`, `COUNT`, `AVG`, `STDDEV`, `MIN`, `MAX`, `RANK`...].
@@ -39,17 +39,17 @@ Desta vez nós aprendemos algumas funções e queries bem interessantes, também
 No projeto deste módulo não houve nenhuma consulta que eu considere interessante o suficiente para receber destaque aqui.
 
 >[!IMPORTANT] 
->*À este módulo eu deixo uma menção especial, pois foi nele que eu decidir reorganizar as pastas e arquivos, e foi onde eu retomei meus estudos de git/github e montei este repositório (totalmente pelo terminal hehe). Por isso há uma falta de padronização inicial nos commits, mas aos poucos eu fui ajustando.*
+>*À este módulo eu deixo uma menção especial, pois foi nele que eu decidi reorganizar as pastas e arquivos, retomei meus estudos de `Git`/`GitHub` e montei este repositório (totalmente pelo terminal, hehe). Por isso há uma falta de padronização nos commits iniciais, mas aos poucos eu fui ajustando.*
 
 
 ## Módulo 15 - Consultas em Múltiplas Tabelas
 
-Este foi, de longe o módulo mais dificil até então... Apesar de certa facilidade em lidar com os `JOIN`s por si só, tem sido dificil entender a profundidade das subqueries e todas as suas funções entre `SELECT`, `FROM` e `WHERE/HAVING`.
+Este foi de longe o módulo mais dificil até então... Apesar de certa facilidade em lidar com os `JOIN`s por si só, tem sido difícil entender a profundidade das subqueries e todas as suas funções entre `SELECT`, `FROM` e `WHERE/HAVING`.
 
 + Query: `JOIN`s [`INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `SELF JOIN`, `FULL JOIN`...].
 + Query: SubQuery [`SELECT`, `FROM`, `WHERE/HAVING`].
 
-> Por incrível que pareça, a consulta mais robusta e complexa que eu fiz, não fazia parte do Projeto Finalizador, sendo uma consulta presente dentro dos meus estudos de SubQuery. Inclusive, faço questão de trazer a própria Query, em destaque aqui:
+> Por incrível que pareça, a consulta mais robusta e complexa que eu fiz não fazia parte do Projeto Finalizador, sendo uma consulta presente dentro dos meus estudos de subquery. Inclusive, faço questão de trazer a própria query, em destaque aqui:
 
 ```sql
 WITH mqp AS (
